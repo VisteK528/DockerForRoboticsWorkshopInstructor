@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="Helvetica, Arial, sans-serif" font-size="17">
+  <style>
+    .t { fill: #1f2937; text-anchor: middle; }
+    .h { font-size: 21px; font-weight: bold; }
+    .s { font-size: 14px; fill: #4b5563; }
+    .c { font-family: Menlo, Consolas, monospace; font-size: 14px; fill: #0f766e; }
+  </style>
+
+  <!-- User network -->
+  <text x="235" y="28" class="t h">User network</text>
+  <text x="235" y="50" class="t c">--network rosnet</text>
+  <rect x="20" y="65" width="430" height="230" rx="12" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="40" y="88" class="s" text-anchor="start" fill="#4b5563">your laptop</text>
+  <rect x="45" y="105" width="380" height="115" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-dasharray="6 4"/>
+  <text x="235" y="125" class="t s">virtual network "rosnet" (172.18.0.0/16)</text>
+  <rect x="65"  y="140" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="145" y="176" class="t">talker</text>
+  <rect x="245" y="140" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="325" y="176" class="t">listener</text>
+  <rect x="120" y="235" width="230" height="45" rx="8" fill="#fff" stroke="#9ca3af"/>
+  <text x="235" y="263" class="t s">native ROS nodes / Wi-Fi ✗</text>
+  <text x="235" y="325" class="t s">isolated · great for experiments &amp; tests</text>
+
+  <!-- Host network -->
+  <text x="720" y="28" class="t h">Host network</text>
+  <text x="720" y="50" class="t c">--network host --ipc host</text>
+  <rect x="500" y="65" width="440" height="230" rx="12" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="520" y="88" class="s" text-anchor="start" fill="#4b5563">your laptop / robot: one network stack</text>
+  <rect x="525" y="110" width="120" height="60" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="585" y="146" class="t">talker</text>
+  <rect x="660" y="110" width="120" height="60" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="720" y="146" class="t">listener</text>
+  <rect x="795" y="110" width="125" height="60" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="857" y="137" class="t s">native</text><text x="857" y="156" class="t s">ros2 node</text>
+  <rect x="525" y="190" width="395" height="36" rx="6" fill="#e9d5ff" stroke="#9333ea"/>
+  <text x="722" y="214" class="t s">/dev/shm shared (--ipc host) → fast shared-memory transport</text>
+  <rect x="580" y="240" width="285" height="42" rx="8" fill="#fff" stroke="#9ca3af"/>
+  <text x="722" y="266" class="t s">other machines on Wi-Fi ✓ (careful!)</text>
+  <text x="720" y="325" class="t s">behaves like native ROS · the default on real robots</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" font-family="Helvetica, Arial, sans-serif" font-size="17">
+  <style>
+    .t { fill: #1f2937; }
+    .m { text-anchor: middle; }
+    .c { font-family: Menlo, Consolas, monospace; font-size: 15px; fill: #1f2937; }
+    .s { font-size: 14px; fill: #4b5563; }
+  </style>
+  <!-- Dockerfile on the left -->
+  <rect x="20" y="20" width="400" height="300" rx="8" fill="#1f2937"/>
+  <text x="40" y="60"  class="c" fill="#fbbf24" style="fill:#fbbf24">FROM ros:jazzy</text>
+  <text x="40" y="112" class="c" style="fill:#e5e7eb">COPY package.xml src/…/</text>
+  <text x="40" y="164" class="c" style="fill:#e5e7eb">RUN rosdep install …</text>
+  <text x="40" y="216" class="c" style="fill:#e5e7eb">COPY ws/src src</text>
+  <text x="40" y="268" class="c" style="fill:#e5e7eb">RUN colcon build</text>
+  <text x="40" y="306" class="s" style="fill:#9ca3af"># each instruction → one layer</text>
+
+  <!-- Layers on the right (bottom = first) -->
+  <rect x="500" y="20"  width="420" height="42" rx="5" fill="#fff" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="710" y="47" class="t m">container's writable layer (lost on rm)</text>
+
+  <rect x="500" y="72"  width="420" height="42" rx="5" fill="#fecaca" stroke="#dc2626"/>
+  <text x="710" y="99" class="t m">colcon build → install/</text>
+  <rect x="500" y="118" width="420" height="42" rx="5" fill="#fecaca" stroke="#dc2626"/>
+  <text x="710" y="145" class="t m">your source code</text>
+  <rect x="500" y="164" width="420" height="42" rx="5" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="710" y="191" class="t m">apt packages from rosdep ✓ CACHED</text>
+  <rect x="500" y="210" width="420" height="42" rx="5" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="710" y="237" class="t m">package.xml ✓ CACHED</text>
+  <rect x="500" y="256" width="420" height="64" rx="5" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="710" y="284" class="t m">ros:jazzy layers (Ubuntu 24.04 + ROS)</text>
+  <text x="710" y="306" class="s m">shared by every image built FROM it</text>
+
+  <text x="480" y="360" class="t m">You changed a <tspan font-weight="bold">.py</tspan> file → only the <tspan fill="#dc2626" font-weight="bold">red</tspan> layers are rebuilt</text>
+</svg>

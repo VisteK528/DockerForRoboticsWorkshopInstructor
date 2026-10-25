@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Helvetica, Arial, sans-serif" font-size="17">
+  <style>
+    .t { fill: #1f2937; text-anchor: middle; }
+    .h { font-size: 22px; font-weight: bold; }
+    .s { font-size: 14px; fill: #4b5563; }
+  </style>
+
+  <!-- Virtual machines -->
+  <text x="235" y="30" class="t h">Virtual machines</text>
+  <g>
+    <rect x="30"  y="50" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="95"  y="81" class="t">App A</text>
+    <rect x="170" y="50" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="235" y="81" class="t">App B</text>
+    <rect x="310" y="50" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="375" y="81" class="t">App C</text>
+
+    <rect x="30"  y="108" width="130" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="95"  y="133" class="t s">Libs</text>
+    <rect x="170" y="108" width="130" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="235" y="133" class="t s">Libs</text>
+    <rect x="310" y="108" width="130" height="40" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="375" y="133" class="t s">Libs</text>
+
+    <rect x="30"  y="156" width="130" height="60" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="95"  y="182" class="t">Guest OS</text><text x="95" y="203" class="t s">+ kernel</text>
+    <rect x="170" y="156" width="130" height="60" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="235" y="182" class="t">Guest OS</text><text x="235" y="203" class="t s">+ kernel</text>
+    <rect x="310" y="156" width="130" height="60" rx="6" fill="#fde68a" stroke="#d97706"/>
+    <text x="375" y="182" class="t">Guest OS</text><text x="375" y="203" class="t s">+ kernel</text>
+
+    <rect x="30" y="226" width="410" height="45" rx="6" fill="#fecaca" stroke="#dc2626"/>
+    <text x="235" y="255" class="t">Hypervisor (VirtualBox, KVM …)</text>
+    <rect x="30" y="279" width="410" height="45" rx="6" fill="#e5e7eb" stroke="#6b7280"/>
+    <text x="235" y="308" class="t">Host OS + kernel</text>
+    <rect x="30" y="332" width="410" height="45" rx="6" fill="#d1d5db" stroke="#4b5563"/>
+    <text x="235" y="361" class="t">Hardware</text>
+  </g>
+  <text x="235" y="405" class="t s">GBs per VM · boots in minutes · full isolation</text>
+
+  <!-- Containers -->
+  <text x="725" y="30" class="t h">Containers</text>
+  <g>
+    <rect x="520" y="104" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="585" y="135" class="t">App A</text>
+    <rect x="660" y="104" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="725" y="135" class="t">App B</text>
+    <rect x="800" y="104" width="130" height="50" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="865" y="135" class="t">App C</text>
+
+    <rect x="520" y="162" width="130" height="54" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="585" y="185" class="t s">Libs + distro</text><text x="585" y="204" class="t s">files (Ubuntu)</text>
+    <rect x="660" y="162" width="130" height="54" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="725" y="185" class="t s">Libs + distro</text><text x="725" y="204" class="t s">files (Debian)</text>
+    <rect x="800" y="162" width="130" height="54" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="865" y="185" class="t s">Libs + distro</text><text x="865" y="204" class="t s">files (Alpine)</text>
+
+    <rect x="520" y="226" width="410" height="45" rx="6" fill="#bae6fd" stroke="#0284c7"/>
+    <text x="725" y="255" class="t">Docker Engine</text>
+    <rect x="520" y="279" width="410" height="45" rx="6" fill="#e5e7eb" stroke="#6b7280"/>
+    <text x="725" y="308" class="t">Host OS + <tspan font-weight="bold">shared</tspan> Linux kernel</text>
+    <rect x="520" y="332" width="410" height="45" rx="6" fill="#d1d5db" stroke="#4b5563"/>
+    <text x="725" y="361" class="t">Hardware</text>
+  </g>
+  <text x="725" y="405" class="t s">MBs · starts in ~1 s · isolated processes, not machines</text>
+
+  <line x1="480" y1="45" x2="480" y2="390" stroke="#9ca3af" stroke-dasharray="6 6"/>
+</svg>
